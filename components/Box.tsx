@@ -1,6 +1,9 @@
-import React from "react";
-import { twMerge } from "tailwind-merge";
+import React from 'react';
 
+// extra packages imports 
+import { twMerge } from 'tailwind-merge';
+
+// types 
 interface BoxProps {
   children: React.ReactNode;
   className?: string;

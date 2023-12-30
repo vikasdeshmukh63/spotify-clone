@@ -1,3 +1,54 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json" // Path to your tsconfig.json file
+  },
+  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "prettier"],
+  "rules": {
+    // General
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-unused-vars": "off", // TypeScript handles this
+    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+    "prefer-const": ["error", { "destructuring": "all" }],
+    
+    // React
+    "react/prop-types": "off", // TypeScript handles prop types
+    "react/no-array-index-key": "warn",
+    "react/jsx-props-no-spreading": "off",
+
+    // JSX-a11y
+    "jsx-a11y/anchor-is-valid": "warn",
+
+    // TypeScript
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Allow implicit return types
+    "@typescript-eslint/explicit-function-return-type": "off", // Allow explicit function return types
+    "@typescript-eslint/no-explicit-any": "off", // Allow the use of 'any' type
+    "@typescript-eslint/no-empty-interface": "off", // Allow empty interfaces
+    "@typescript-eslint/ban-ts-comment": "off", // Allow @ts-ignore comments
+
+    // Prettier
+    "prettier/prettier": ["error", { "singleQuote": true, "trailingComma": "es5", "printWidth": 120 }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

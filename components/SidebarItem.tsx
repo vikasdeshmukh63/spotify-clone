@@ -1,8 +1,15 @@
-import Link from "next/link";
-import React from "react";
-import { IconType } from "react-icons";
-import { twMerge } from "tailwind-merge";
+import React from 'react';
 
+// next js imports 
+import Link from 'next/link';
+
+// importing icon type
+import { IconType } from 'react-icons';
+
+// extra packages imports
+import { twMerge } from 'tailwind-merge';
+
+// types
 interface SidebarItemProps {
   icon: IconType;
   label: string;
@@ -30,7 +37,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon: Icon, href, label, acti
     text-neutral-400
     py-1
     `,
-        active && "text-white"
+        active && 'text-white'
       )}
     >
       <Icon size={26} />

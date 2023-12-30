@@ -1,34 +1,44 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
-import { HiHome } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
-import Box from "./Box";
-import SidebarItem from "./SidebarItem";
-import Library from "./Library";
+import React, { useMemo } from 'react';
 
+// next js imports 
+import { usePathname } from 'next/navigation';
+
+// assets
+import { HiHome } from 'react-icons/hi';
+import { BiSearch } from 'react-icons/bi';
+
+// component imports 
+import Box from './Box';
+import SidebarItem from './SidebarItem';
+import Library from './Library';
+
+// types 
 interface SidebarProps {
   children: React.ReactNode;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ children }) => {
+
+  // using usePathname hook
   const pathname = usePathname();
 
+  // routes array 
   const routes = useMemo(
     () => [
       {
         icon: HiHome,
-        label: "Home",
-        active: pathname !== "/search",
-        href: "/",
+        label: 'Home',
+        active: pathname !== '/search',
+        href: '/'
       },
       {
         icon: BiSearch,
-        label: "Search",
-        active: pathname === "/search",
-        href: "/search",
-      },
+        label: 'Search',
+        active: pathname === '/search',
+        href: '/search'
+      }
     ],
     [pathname]
   );

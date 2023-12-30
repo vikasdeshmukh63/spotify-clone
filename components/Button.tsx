@@ -1,9 +1,12 @@
-import React, { forwardRef } from "react";
-import { twMerge } from "tailwind-merge";
+import React, { forwardRef } from 'react';
 
+// extra packages imports
+import { twMerge } from 'tailwind-merge';
+
+// types 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, children, disabled, type = "button", ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, children, disabled, type = 'button', ...props }, ref) => {
   return (
     <button
       type={type}
@@ -33,6 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, children
   );
 });
 
-Button.displayName = "Button";
+// setting component name 
+Button.displayName = 'Button';
 
 export default Button;
